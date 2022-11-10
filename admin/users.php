@@ -2,8 +2,8 @@
 
 ?>
 
-<div>
-    <h1>All Users</h1>
+<div >
+    <h1 align="center">All Users</h1>
 <?php
 include 'config.php';
 
@@ -13,7 +13,7 @@ $result = mysqli_query($conn, $sql);
 
 if (mysqli_num_rows($result) > 0) {
 ?>
-    <table>
+    <table border="1" style="margin:auto ;">
         <thead>
             <tr>
                 <th>S.No</th>
@@ -33,9 +33,15 @@ if (mysqli_num_rows($result) > 0) {
             <td> <?php echo $row['user_id']; ?> </td>
             <td> <?php echo $row['first_name'] .' '. $row['last_name'] ; ?> </td>
             <td> <?php echo $row['username']; ?> </td>
-            <td> <?php echo $row['role']; ?> </td>
-            <td> <a href="">Edit</a> </td>
-            <td> <a href="">Delete</a> </td>
+            <td> <?php 
+            if($row['role']==0){
+                echo "User";
+            }else{
+                echo "Admin";
+            }
+            ?> </td>
+            <td> <a href="update-user.php?id=<?php echo $row['user_id']; ?>">Edit</a> </td>
+            <td> <a href="delete-user.php?id=<?php echo $row['user_id']; ?>">Delete</a> </td>
         </tr>
         <?php } ?>
         </tbody>
