@@ -47,4 +47,10 @@ if (mysqli_num_rows($result) > 0) {
         </tbody>
     </table>
     <?php } ?>
+
+    <ul>
+        <li><a>1</a></li>
+        <li><a>2</a></li>
+        <li><a>3</a></li>
+    </ul>
 </div>
