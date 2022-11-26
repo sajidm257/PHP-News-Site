@@ -19,7 +19,7 @@ if(isset($_POST['save'])){
         $result1 = mysqli_query($conn, $sql1) or die("Query Failed");
 
         if($result1){
-            header("Location:{$hostname}/admin/users.php");
+            header("Location: {$hostname}/admin/users.php");
         }
     }
 }

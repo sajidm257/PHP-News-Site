@@ -12,7 +12,7 @@ if(isset($_POST['submit'])){
     $sql = "UPDATE user SET first_name = '{$fname}', last_name = '{$lname}', username = '{$user}', role = '{$role}' WHERE user_id = {$userid}";
   
       if(mysqli_query($conn,$sql)){
-        header("Location:{$hostname}/admin/users.php");
+        header("Location: {$hostname}/admin/users.php");
       }
   }
 ?>
